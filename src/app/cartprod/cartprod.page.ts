@@ -12,9 +12,9 @@ import { CartService } from '../cart.service';
 })
 export class CartprodPage implements OnInit {
 
-  carrito$ = this.carritoService.carrito$;
-  total$ = this.carritoService.total$;
-  constructor(private carritoService: CartService, private router: Router, private alertController: AlertController) { }
+  carrito$ = this.cartSER.carrito$;
+  total$ = this.cartSER.total$;
+  constructor(private cartSER: CartService, private router: Router, private alertController: AlertController) { }
   
   
     goBackToHome() {
@@ -22,7 +22,7 @@ export class CartprodPage implements OnInit {
    }
 
    removeItem(item: apishop) {
-    this.carritoService.removeItem(item);
+    this.cartSER.removeItem(item);
   }
 
   async process() {
@@ -43,7 +43,7 @@ export class CartprodPage implements OnInit {
       });
       await alert.present();
 
-      this.carritoService.clearCart();
+      this.cartSER.clearCart();
       this.router.navigate(['/home']);
     }
   }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
@@ -13,7 +13,8 @@ import { ShopdetailsPage } from './shopdetails.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ShopdetailsPageRoutingModule
+    ShopdetailsPageRoutingModule,
+    CurrencyPipe
   ],
   declarations: [ShopdetailsPage]
 })

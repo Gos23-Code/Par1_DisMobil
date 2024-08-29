@@ -6,6 +6,8 @@ import { PR } from '../interfaceface/interfacePR';
 import { CartService } from '../cart.service';
 
 
+
+
 @Component({
   selector: 'app-shopdetails',
   templateUrl: './shopdetails.page.html',
@@ -16,10 +18,11 @@ export class ShopdetailsPage implements OnInit {
   public details!: PR;
   private id!: number;
   productINV: apishop | null = null;
-  producto: any;
 
-  constructor(private carr: CartService, private readonly activRouter: ActivatedRoute, private readonly rout: Router, private readonly apIService: ApiserviceService) { }
-  product: apishop | undefined;
+
+  constructor(private carr: CartService, private  activRouter: ActivatedRoute, private rout: Router, private  apIService: ApiserviceService) { }
+  // product: apishop | undefined;
+  // product: any;
   async ngOnInit() {
 
     const id = this.activRouter.snapshot.paramMap.get('id');
@@ -35,12 +38,20 @@ export class ShopdetailsPage implements OnInit {
     }
   }
 
-  agregarAlCarrito() {
-      if (this.product) {
-        this.carr.addToCart(this.product);
-        this.rout.navigate(['/cartprod']);
-      }
-    }
-    // Podrías mostrar una notificación o redirigir a otra página después de agregar al carrito
-  }
+   agregarAlCarrito() {
+       if (this.productINV) {
+         this.carr.addToCart(this.productINV);
+         this.rout.navigate(['/cartprod']);
+       }
+     }
+
+  // agregarAlCarrito() {
+  //   if (this.product) {
+  //     this.carr.addToCart(this.product);
+  //     this.rout.navigate(['/cartprod']);
+  //   } else {
+  //     console.error("Producto no disponible para agregar al carrito");
+  // }
+  
+}
 

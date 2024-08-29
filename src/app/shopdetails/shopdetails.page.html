@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <!-- <ion-button size="default" slot="end" (click)="goToDetails()" color="light">
+      <ion-icon name="cart"></ion-icon>
+    </ion-button> -->
+    <ion-title>Producto</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="productINV">
+  <ion-toolbar color="primary">
+    <ion-card>
+      <img [src]="productINV.image" alt="{{ productINV.title }}">
+      <ion-card-header>
+        <ion-card-title>{{ productINV.title }}</ion-card-title>
+        <ion-card-subtitle>{{ productINV.price | currency }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content color="secondary">
+        <p>{{ productINV.description }}</p>
+        <p>Category: {{ productINV.category }}</p>
+        <p>Rating: {{ productINV.rating.rate }} ({{ productINV.rating.count }} reviews)</p>
+        <div class="button-container">
+          <ion-button color="tertiary"  (click)="agregarAlCarrito()">
+            Add to Cart
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+

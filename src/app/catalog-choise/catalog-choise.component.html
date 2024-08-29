@@ -1,0 +1,15 @@
+<ion-list>
+  <ion-item>
+    <ion-select
+    aria-label="Catalog"
+    interface="popover"
+    placeholder="Choise a Catalog"
+    >
+    <ion-select-option *ngFor="let Category of catalog">
+      {{ Category }}
+    </ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+

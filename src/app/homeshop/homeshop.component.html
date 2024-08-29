@@ -1,0 +1,17 @@
+<div class="size-container">
+  <ion-card *ngFor="let item of artic" color="primary" [routerLink]="['/shopdetails/' + item.id]">
+    <ion-card-header>
+      <img [src]="item.image" />
+      <ion-card-subtitle>{{item.title}}</ion-card-subtitle>
+      <ion-card-title>{{item.id}}</ion-card-title>
+    </ion-card-header>
+
+
+    <ion-card-content>
+      <p>{{item.category}}</p>
+      <p>Price: {{item.price | currency}}</p>
+      </ion-card-content>
+  </ion-card>
+
+  
+</div>
